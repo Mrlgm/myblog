@@ -4,7 +4,8 @@
   "description": "my first blog",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "istanbul cover _mocha",
+    "start": "cross-env NODE_ENV=production pm2 start index.js --name 'myblog'"
   },
   "author": "",
   "license": "ISC",
@@ -25,12 +26,14 @@
     "winston": "^3.1.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "supertest": "^3.3.0"
   }
